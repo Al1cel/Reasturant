@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hunger - Restaurant</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts - Tenor Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <div class="container">
+                <div class="d-flex justify-content-between w-100 align-items-center">
+                    <!-- Левая часть меню -->
+                    <div class="d-none d-lg-flex">
+                        <ul class="navbar-nav me-auto">
+                            <li class="nav-item"><a class="nav-link" href="#home">HOME</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#about">ABOUT</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#team">TEAM</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#booking">BOOKING</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Центральный логотип -->
+                    <div class="navbar-brand mx-0">
+                        <img src="/assets/images/Vector.png" alt="Hunger Logo" id="logo">
+                    </div>
+                    
+                    <!-- Правая часть меню -->
+                    <div class="d-none d-lg-flex">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"><a class="nav-link" href="#menu">MENU</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#events">EVENTS</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link auth-link" href="#" data-bs-toggle="modal" data-bs-target="#authModal">
+                                    <i class="fas fa-user"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Кнопка для мобильной навигации -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Модальное окно авторизации/регистрации -->
+    <div class="modal fade" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <ul class="nav nav-tabs w-100" id="authTabs" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab">Login</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register" type="button" role="tab">Register</button>
+                        </li>
+                    </ul>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="tab-content" id="authTabsContent">
+                        <div class="tab-pane fade show active" id="login" role="tabpanel">
+                            <form id="loginForm">
+                                <div class="mb-3">
+                                    <label for="loginEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="loginEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="loginPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="loginPassword" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Login</button>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="register" role="tabpanel">
+                            <form id="registerForm">
+                                <div class="mb-3">
+                                    <label for="registerEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="registerEmail" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="registerPassword" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="registerPassword" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                    <input type="password" class="form-control" id="confirmPassword" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Register</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero Section -->
+    <section class="hero" id="home" style="background-image: url('/app/public/assets/images/header-bg.png');">
+        <div class="hero-overlay"></div>
+        <div class="container h-100">
+            <div class="row h-100 align-items-center justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="hero__text">
+                        <h3 class="hero__subtitle">RESTAURANT</h3>
+                        <h1 class="hero__title">hungry people</h1>
+                        <div class="hero__divider mx-auto"></div>
+                        <div class="hero__buttons">
+                            <a href="#booking" class="btn btn-primary hero__btn mx-2">BOOK TABLE</a>
+                            <a href="#contact" class="btn btn-outline-light hero__btn mx-2">EXPLORE</a>
+                        </div>
+                    </div>
+                    <a href="#about" class="hero__scroll mt-5">
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Вертикальное время работы -->
+        <div class="hero__hours">
+            <div class="hero__hours-inner">
+                <span>Mon - Fri: <strong>8PM - 10PM</strong></span>
+                <span>Sat - Sun: <strong>8PM - 3AM</strong></span>
+            </div>
+        </div>
+        
+        <!-- Социальные сети справа -->
+        <div class="hero__social">
+            <a href="https://facebook.com" class="hero__social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" class="hero__social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" class="hero__social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </section>
+    <!-- About Us Section -->
+    <section class="about section-padding bg-white" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 about__text pe-lg-5">
+                    <h2 class="section-title text-dark">about us</h2>
+                    <h3 class="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.</h3>
+                    <div class="about__divider"></div>
+                    <p class="about__description text-dark">
+                        Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.
+                    </p>
+                </div>
+                <div class="col-lg-6 about__image position-relative">
+                    <img src="/app/public/assets/images/about-img.png" alt="About Us" class="img-fluid about__img">
+                    <div class="about__square"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team Section -->
+    <section class="team section-padding" id="team" style="background-image: url('/app/public/assets/images/specialty\'s-bg.jpg');">
+        <div class="container">
+            <div class="section-header text-center">
+                <h3 class="section-subtitle">OUR TEAM</h3>
+            </div>
+            <div class="row align-items-center flex-row-reverse">
+                <div class="col-lg-6 team__text ps-lg-5">
+                    <h2 class="section-title">MASTER CHEF</h2>
+                    <h3 class="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.</h3>
+                    <div class="team__divider"></div>
+                    <p class="team__description">
+                        Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.
+                    </p>
+                </div>
+                <div class="col-lg-6 team__image position-relative">
+                    <img src="/app/public/assets/images/Rectangle.png" alt="Our Team" class="img-fluid team__img">
+                    <div class="team__square"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book a Table Section -->
+    <section class="booking section-padding bg-white" id="booking">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 booking__form-container pe-lg-5">
+                    <h2 class="section-title text-dark">book a table</h2>
+                    <form id="bookingForm" class="booking__form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="bookingName" placeholder="Name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="bookingEmail" placeholder="Email" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" id="bookingPhone" placeholder="Phone" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <select class="form-control" id="bookingPeople" required>
+                                        <option value="" disabled selected>People</option>
+                                        <option value="1">1 Person</option>
+                                        <option value="2">2 People</option>
+                                        <option value="3">3 People</option>
+                                        <option value="4">4 People</option>
+                                        <option value="5">5 People</option>
+                                        <option value="6">6 People</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="date" class="form-control" id="bookingDate" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="time" class="form-control" id="bookingTime" required>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary booking__submit">BOOK NOW</button>
+                    </form>
+                </div>
+                <div class="col-lg-6 booking__image position-relative">
+                    <img src="/app/public/assets/images/about-img (1).png" alt="Book a Table" class="img-fluid booking__img">
+                    <div class="booking__square"></div>
+                </div>
+            </div>
+            <div class="booking__footer text-center mt-5">
+                <p class="text-muted small">Mon - Fri: <strong>8PM - 10PM</strong>, Sat - Sun: <strong>8PM - 3AM</strong>, Phone: <strong>+40 729 131 637 / +40 726 458 782</strong></p>
+            </div>
+        </div>
+    </section>
+<!-- Specialties Section -->
+<section class="specialties section-padding" id="specialties" style="background-image: url('/app/public/assets/images/spec.png');">
+    <div class="container">
+        <div class="section-header text-center">
+            <h3 class="section-subtitle">SPECIALTIES</h3>
+        </div>
+        <div class="specialties__slider">
+            <div class="specialties__slide">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 specialties__image position-relative">
+                        <div class="specialties__square"></div>
+                        <img src="/app/public/assets/images/Rectangle (1).png" alt="Specialty 1" class="img-fluid specialties__img">
+                    </div>
+                    <div class="col-lg-6 specialties__text ps-lg-5">
+                        <h2 class="section-title">chocolate pancakes</h2>
+                        <h3 class="section-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.</h3>
+                        <div class="specialties__divider"></div>
+                        <p class="specialties__description">
+                            Integer ullamcorper neque eu purus euismod, ac faucibus mauris posuere. Morbi non ultrices ligula. Sed dictum, enim sed ullamcorper feugiat, dui odio vehicula eros, a sollicitudin lorem quam nec sem. Mauris tincidunt feugiat diam convallis pharetra. Nulla facilisis semper laoreet.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Menu Section -->
+<section class="menu section-padding bg-white" id="menu">
+    <div class="container">
+        <h2 class="section-title text-dark text-center">DELICIOUS MENU</h2>
+        <h3 class="section-subtitle text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.</h3>
+        <div class="section-divider"></div>
+        
+        <ul class="nav nav-tabs menu__tabs justify-content-center" id="menuTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="soupe-tab" data-bs-toggle="tab" data-bs-target="#soupe" type="button">SOUPE</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pizza-tab" data-bs-toggle="tab" data-bs-target="#pizza" type="button">PIZZA</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pasta-tab" data-bs-toggle="tab" data-bs-target="#pasta" type="button">PASTA</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="desert-tab" data-bs-toggle="tab" data-bs-target="#desert" type="button">DESERT</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="wine-tab" data-bs-toggle="tab" data-bs-target="#wine" type="button">WINE</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="beer-tab" data-bs-toggle="tab" data-bs-target="#beer" type="button">BEER</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="drinks-tab" data-bs-toggle="tab" data-bs-target="#drinks" type="button">DRINKS</button>
+            </li>
+        </ul>
+        
+        <div class="tab-content" id="menuTabsContent">
+            <div class="tab-pane fade show active" id="pizza" role="tabpanel">
+                <div class="row menu__items">
+                    <div class="col-md-4 menu__item">
+                        <div class="menu__item-content">
+                            <h4 class="menu__item-title">PIZZA QUATRO STAGIONI <span class="menu__item-dots"></span> <span class="menu__item-price">55,68 USD</span></h4>
+                            <p class="menu__item-subtitle">Integer ullamcorper neque eu purus euismod</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 menu__item">
+                        <div class="menu__item-content">
+                            <h4 class="menu__item-title">PIZZA QUATRO STAGIONI <span class="menu__item-dots"></span> <span class="menu__item-price">55,68 USD</span></h4>
+                            <p class="menu__item-subtitle">Integer ullamcorper neque eu purus euismod</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 menu__item">
+                        <div class="menu__item-content">
+                            <h4 class="menu__item-title">PIZZA QUATRO STAGIONI <span class="menu__item-dots"></span> <span class="menu__item-price">55,68 USD</span></h4>
+                            <p class="menu__item-subtitle">Integer ullamcorper neque eu purus euismod</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 menu__item">
+                        <div class="menu__item-content">
+                            <h4 class="menu__item-title">PIZZA QUATRO STAGIONI <span class="menu__item-dots"></span> <span class="menu__item-price">55,68 USD</span></h4>
+                            <p class="menu__item-subtitle">Integer ullamcorper neque eu purus euismod</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 menu__item">
+                        <div class="menu__item-content">
+                            <h4 class="menu__item-title">PIZZA QUATRO STAGIONI <span class="menu__item-dots"></span> <span class="menu__item-price">55,68 USD</span></h4>
+                            <p class="menu__item-subtitle">Integer ullamcorper neque eu purus euismod</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 menu__item">
+                        <div class="menu__item-content">
+                            <h4 class="menu__item-title">PIZZA QUATRO STAGIONI <span class="menu__item-dots"></span> <span class="menu__item-price">55,68 USD</span></h4>
+                            <p class="menu__item-subtitle">Integer ullamcorper neque eu purus euismod</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 menu__item">
+                        <div class="menu__item-content">
+                            <h4 class="menu__item-title">PIZZA QUATRO STAGIONI <span class="menu__item-dots"></span> <span class="menu__item-price">55,68 USD</span></h4>
+                            <p class="menu__item-subtitle">Integer ullamcorper neque eu purus euismod</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 menu__item">
+                        <div class="menu__item-content">
+                            <h4 class="menu__item-title">PIZZA QUATRO STAGIONI <span class="menu__item-dots"></span> <span class="menu__item-price">55,68 USD</span></h4>
+                            <p class="menu__item-subtitle">Integer ullamcorper neque eu purus euismod</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 menu__item">
+                        <div class="menu__item-content">
+                            <h4 class="menu__item-title">PIZZA QUATRO STAGIONI <span class="menu__item-dots"></span> <span class="menu__item-price">55,68 USD</span></h4>
+                            <p class="menu__item-subtitle">Integer ullamcorper neque eu purus euismod</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 menu__item">
+                        <div class="menu__item-content">
+                            <h4 class="menu__item-title">PIZZA QUATRO STAGIONI <span class="menu__item-dots"></span> <span class="menu__item-price">55,68 USD</span></h4>
+                            <p class="menu__item-subtitle">Integer ullamcorper neque eu purus euismod</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 menu__item">
+                        <div class="menu__item-content">
+                            <h4 class="menu__item-title">PIZZA QUATRO STAGIONI <span class="menu__item-dots"></span> <span class="menu__item-price">55,68 USD</span></h4>
+                            <p class="menu__item-subtitle">Integer ullamcorper neque eu purus euismod</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 menu__item">
+                        <div class="menu__item-content">
+                            <h4 class="menu__item-title">PIZZA QUATRO STAGIONI <span class="menu__item-dots"></span> <span class="menu__item-price">55,68 USD</span></h4>
+                            <p class="menu__item-subtitle">Integer ullamcorper neque eu purus euismod</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 menu__item">
+                        <div class="menu__item-content">
+                            <h4 class="menu__item-title">PIZZA QUATRO STAGIONI <span class="menu__item-dots"></span> <span class="menu__item-price">55,68 USD</span></h4>
+                            <p class="menu__item-subtitle">Integer ullamcorper neque eu purus euismod</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 menu__item">
+                        <div class="menu__item-content">
+                            <h4 class="menu__item-title">PIZZA QUATRO STAGIONI <span class="menu__item-dots"></span> <span class="menu__item-price">55,68 USD</span></h4>
+                            <p class="menu__item-subtitle">Integer ullamcorper neque eu purus euismod</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 menu__item">
+                        <div class="menu__item-content">
+                            <h4 class="menu__item-title">PIZZA QUATRO STAGIONI <span class="menu__item-dots"></span> <span class="menu__item-price">55,68 USD</span></h4>
+                            <p class="menu__item-subtitle">Integer ullamcorper neque eu purus euismod</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 menu__item">
+                        <div class="menu__item-content">
+                            <h4 class="menu__item-title">PIZZA QUATRO STAGIONI <span class="menu__item-dots"></span> <span class="menu__item-price">55,68 USD</span></h4>
+                            <p class="menu__item-subtitle">Integer ullamcorper neque eu purus euismod</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 menu__item">
+                        <div class="menu__item-content">
+                            <h4 class="menu__item-title">PIZZA QUATRO STAGIONI <span class="menu__item-dots"></span> <span class="menu__item-price">55,68 USD</span></h4>
+                            <p class="menu__item-subtitle">Integer ullamcorper neque eu purus euismod</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 menu__item">
+                        <div class="menu__item-content">
+                            <h4 class="menu__item-title">PIZZA QUATRO STAGIONI <span class="menu__item-dots"></span> <span class="menu__item-price">55,68 USD</span></h4>
+                            <p class="menu__item-subtitle">Integer ullamcorper neque eu purus euismod</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 menu__item">
+                        <div class="menu__item-content">
+                            <h4 class="menu__item-title">PIZZA QUATRO STAGIONI <span class="menu__item-dots"></span> <span class="menu__item-price">55,68 USD</span></h4>
+                            <p class="menu__item-subtitle">Integer ullamcorper neque eu purus euismod</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 menu__item">
+                        <div class="menu__item-content">
+                            <h4 class="menu__item-title">PIZZA QUATRO STAGIONI <span class="menu__item-dots"></span> <span class="menu__item-price">55,68 USD</span></h4>
+                            <p class="menu__item-subtitle">Integer ullamcorper neque eu purus euismod</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 menu__item">
+                        <div class="menu__item-content">
+                            <h4 class="menu__item-title">PIZZA QUATRO STAGIONI <span class="menu__item-dots"></span> <span class="menu__item-price">55,68 USD</span></h4>
+                            <p class="menu__item-subtitle">Integer ullamcorper neque eu purus euismod</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+    <!-- Events Section -->
+    <section class="events section-padding" id="events" style="background-image: url('/app/public/assets/images/events.png');">
+        <div class="container">
+            <div class="section-header text-center">
+                <h3 class="section-subtitle">PRIVATE EVENTS</h3>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div class="events__item position-relative">
+                        <div class="events__image">
+                            <img src="/app/public/assets/images/Rectangle (2).png" alt="Weddings" class="img-fluid">
+                            <div class="events__square events__square-left"></div>
+                        </div>
+                        <h3 class="events__title-left">Weddings</h3>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="events__item position-relative">
+                        <div class="events__image">
+                            <img src="/app/public/assets/images/Rectangle (3).png" alt="Corporate Parties" class="img-fluid">
+                            <div class="events__square events__square-right"></div>
+                        </div>
+                        <h3 class="events__title-right">Corporate Parties</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="events__footer text-center mt-5">
+                <p>For private events please call: <strong>+40 729 131 637 / +40 726 458 782</strong> or use the contact form.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Gallery Section -->
+<section class="gallery">
+    <div class="container-fluid p-0">
+        <div class="row g-0">
+            <div class="col-md-3 col-6">
+                <img src="/app/public/assets/images/Rectangle (4).png" alt="Gallery Image 1" class="img-fluid">
+            </div>
+            <div class="col-md-3 col-6">
+                <img src="/app/public/assets/images/Rectangle (5).png" alt="Gallery Image 2" class="img-fluid">
+            </div>
+            <div class="col-md-3 col-6">
+                <img src="/app/public/assets/images/Rectangle (6).png" alt="Gallery Image 3" class="img-fluid">
+            </div>
+            <div class="col-md-3 col-6">
+                <img src="/app/public/assets/images/Rectangle (7).png" alt="Gallery Image 4" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section class="contact section-padding" id="contact" style="background-image: url('/app/public/assets/images/7680x4320-white-solid-color-background.jpg');">
+        <div class="container">
+            <h2 class="section-title text-center">CONTACT</h2>
+            <h3 class="section-subtitle text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis at velit maximus, molestie est a, tempor magna.</h3>
+            <div class="section-divider"></div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <form id="contactForm" class="contact__form">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="contactName" placeholder="Name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="contactEmail" placeholder="Email" required>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" id="contactPhone" placeholder="Phone" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" id="contactMessage" rows="5" placeholder="Message" required></textarea>
+                        </div>
+                        <div class="contact__info text-center">
+                            <div class="contact__item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>5th London Boulevard, U.K.</span>
+                            </div>
+                            <div class="contact__item">
+                                <i class="fas fa-phone"></i>
+                                <span>+40 729 131 637 / +40 726 458 782</span>
+                            </div>
+                            <div class="contact__item">
+                                <i class="fas fa-envelope"></i>
+                                <span>office@mindblister.com</span>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary contact__submit mx-auto d-block">SEND MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Map Section -->
+    <section class="map">
+        <div id="yandexMap" style="width: 100%; height: 450px;"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content text-center">
+                <p class="small">&copy; Copyright Mindblister 2019</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Подключение скриптов -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

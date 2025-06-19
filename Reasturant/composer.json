@@ -1,0 +1,14 @@
+{
+    "name": "hunger/restaurant",
+    "description": "Hunger Restaurant Website",
+    "type": "project",
+    "require": {
+        "php": ">=7.4",
+        "ext-pdo": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}
